@@ -2,12 +2,6 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "banqiao-junior-high-guide",
   "compatibility_date": "2026-09-11",
-  "workers_dev": true,
-  "preview_urls": false,
-  "observability": {
-    "enabled": true
-  },
-  "assets": {
-    "directory": "."
-  }
+  // Cloudflare Pages：只上傳 dist/（由 scripts/pre-push 從 index.html 與 img/ 複製產生）
+  "pages_build_output_dir": "./dist"
 }

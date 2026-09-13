@@ -1,5 +1,5 @@
 #!/bin/sh
-# 推送 main 分支到 GitHub 時，同步部署到 Cloudflare。
+# 推送 main 分支到 GitHub 時，同步部署到 Cloudflare Pages。
 # 安裝：cp scripts/pre-push .git/hooks/pre-push
 # 部署失敗不會擋住 GitHub 推送，只會顯示警告。
 
@@ -13,10 +13,21 @@ done
 export PATH="$PATH:/c/Program Files/nodejs"
 cd "$(git rev-parse --show-toplevel)" || exit 0
 
-echo "[pre-push] 部署到 Cloudflare..."
-if npx --yes wrangler deploy --message "$(git log -1 --pretty=%s)"; then
-  echo "[pre-push] Cloudflare 部署完成"
+# 只把網站本身放進 dist/，避免上傳 .git、設定檔等內部檔案
+rm -rf dist
+mkdir -p dist
+cp index.html dist/
+cp -r img dist/
+
+echo "[pre-push] 部署到 Cloudflare Pages..."
+if npx --yes wrangler pages deploy dist \
+    --project-name banqiao-junior-high-guide \
+    --branch main \
+    --commit-hash "$(git rev-parse HEAD)" \
+    --commit-message "$(git log -1 --pretty=%s)" \
+    --commit-dirty=true; then
+  echo "[pre-push] Cloudflare Pages 部署完成"
 else
-  echo "[pre-push] 警告：Cloudflare 部署失敗，GitHub 推送仍會繼續" >&2
+  echo "[pre-push] 警告：Cloudflare Pages 部署失敗，GitHub 推送仍會繼續" >&2
 fi
 exit 0

@@ -12,14 +12,14 @@
 ## 網站
 
 - GitHub Pages：https://davx1012.github.io/banqiao-junior-high-guide/
-- Cloudflare：https://banqiao-junior-high-guide.fcuk1012.workers.dev
+- Cloudflare Pages：https://banqiao-junior-high-guide.pages.dev
 
 ## 部署
 
 - **GitHub Pages**：推送到 `main` 後由 GitHub 自動建置。
-- **Cloudflare**：由 `scripts/pre-push` Git hook 在推送 `main` 時執行 `wrangler deploy`。
+- **Cloudflare Pages**：由 `scripts/pre-push` Git hook 在推送 `main` 時部署。
+  - 部署時先把 `index.html` 與 `img/` 複製到 `dist/`，再執行 `wrangler pages deploy dist`。只公開網站本身，不會上傳 `.git` 等內部檔案。
   - 安裝方式：`cp scripts/pre-push .git/hooks/pre-push`
-  - `.assetsignore` 排除 `.git`、`.wrangler` 等非網站檔案，只公開 `index.html` 與 `img/`。
 
 ## 訪客計數器
 

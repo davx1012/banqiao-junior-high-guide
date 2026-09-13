@@ -3,453 +3,633 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>板橋升私中決策筆記</title>
-<meta name="description" content="從板橋出發，116 學年度（2027 年入學）公立與私立國中怎麼選：升學數據、三所推薦私中、入學方式、時間表與寒假衝刺班規劃。">
+<title>升國中大冒險</title>
+<meta name="description" content="從板橋出發，116 學年度（2027 年上國中）要讀公立還是私立？升學數據、三所推薦私中、入學方式、時間表和寒假衝刺班規劃。">
+<link rel="icon" href="img/star.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&display=swap">
 <style>
 :root{
-  --paper:#F3F6F8;
-  --sheet:#FFFFFF;
-  --ink:#16283A;
-  --muted:#586A7B;
-  --rule:#D3DDE5;
-  --rule-soft:#E5ECF1;
-  --red:#B8322A;
-  --red-soft:#F7E3E0;
-  --blue:#235A8F;
-  --blue-soft:#E1ECF6;
-  --hl:#FFEE99;
-  --bar:#235A8F;
-  --bar-pub:#9AAAB8;
-  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
-  --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,"Consolas",monospace;
+  --bg:#FFF5F8;
+  --card:#FFFFFF;
+  --ink:#4A3B4E;
+  --muted:#857589;
+  --line:#F3DCE5;
+  --pink:#FF8FB8;
+  --pink-deep:#D9486F;
+  --pink-soft:#FFE3EE;
+  --sky:#6CBDF0;
+  --sky-deep:#2F7FB8;
+  --sky-soft:#E3F3FD;
+  --mint-soft:#E2F7EE;
+  --mint-deep:#2E8A64;
+  --sun:#FFD45C;
+  --bar-pub:#C9B9CD;
+  --shadow:0 6px 0 #F3DCE5;
+  --font:"Huninn","Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --paper:#0E151C;--sheet:#15202A;--ink:#E3E9EF;--muted:#94A4B3;--rule:#2A3947;--rule-soft:#1E2B36;
-    --red:#FF8277;--red-soft:#3A1F1D;--blue:#86B9EA;--blue-soft:#1A2D3F;--hl:rgba(255,220,90,.22);--bar:#86B9EA;--bar-pub:#5A6B7B;
+    --bg:#221B28;--card:#2D2434;--ink:#F5EAF3;--muted:#BDAEC2;--line:#43364C;
+    --pink:#FF9CC2;--pink-deep:#FF7DA6;--pink-soft:#46283A;--sky:#7CC7F5;--sky-deep:#8FD0F7;--sky-soft:#1F3345;
+    --mint-soft:#1F3A30;--mint-deep:#7FDDB4;--sun:#FFD45C;--bar-pub:#6B5B70;--shadow:0 6px 0 #17121B;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0E151C;--sheet:#15202A;--ink:#E3E9EF;--muted:#94A4B3;--rule:#2A3947;--rule-soft:#1E2B36;
-  --red:#FF8277;--red-soft:#3A1F1D;--blue:#86B9EA;--blue-soft:#1A2D3F;--hl:rgba(255,220,90,.22);--bar:#86B9EA;--bar-pub:#5A6B7B;
+  --bg:#221B28;--card:#2D2434;--ink:#F5EAF3;--muted:#BDAEC2;--line:#43364C;
+  --pink:#FF9CC2;--pink-deep:#FF7DA6;--pink-soft:#46283A;--sky:#7CC7F5;--sky-deep:#8FD0F7;--sky-soft:#1F3345;
+  --mint-soft:#1F3A30;--mint-deep:#7FDDB4;--sun:#FFD45C;--bar-pub:#6B5B70;--shadow:0 6px 0 #17121B;
 }
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.8}
-a{color:var(--blue);text-underline-offset:3px}
-a:focus-visible,button:focus-visible,input:focus-visible,label:focus-within{outline:2px solid var(--blue);outline-offset:2px}
-h1,h2,h3{font-family:var(--serif);text-wrap:balance;line-height:1.35;margin:0}
-h2{font-size:1.65rem;font-weight:900}
-h3{font-size:1.2rem;font-weight:700}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:18px;line-height:1.85;letter-spacing:.02em}
+img{max-width:100%;display:block}
+a{color:var(--sky-deep);text-underline-offset:4px}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-weight:400;line-height:1.3;margin:0;text-wrap:balance}
 p{margin:0}
-mark{background:linear-gradient(transparent 45%,var(--hl) 45%);color:inherit;padding:0 .1em}
-.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+b,strong{font-weight:400;color:var(--pink-deep)}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
 
-/* layout */
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.grid{display:grid;grid-template-columns:1fr;gap:40px}
-@media (min-width:960px){.grid{grid-template-columns:200px 1fr;gap:56px}}
-nav.toc{display:none}
-@media (min-width:960px){
-  nav.toc{display:block;position:sticky;top:24px;align-self:start;font-size:.9rem;padding-top:8px}
-  nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:4px;border-left:1px solid var(--rule)}
-  nav.toc a{display:block;padding:3px 0 3px 14px;color:var(--muted);text-decoration:none}
-  nav.toc a:hover{color:var(--ink)}
-}
-main{min-width:0;display:grid;gap:64px;padding-bottom:80px}
-section{display:grid;gap:20px;scroll-margin-top:20px}
-.lede{max-width:40em;color:var(--muted)}
-.eyebrow{font-size:.78rem;letter-spacing:.14em;color:var(--muted);font-weight:500}
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 12% 20%,var(--pink-soft) 0 90px,transparent 91px),
+  radial-gradient(circle at 92% 70%,var(--sky-soft) 0 130px,transparent 131px),var(--bg)}
+.hero .wrap{padding-top:40px;padding-bottom:44px;display:grid;gap:22px;position:relative}
+.hero-top{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:720px){.hero-top{grid-template-columns:1fr 240px;align-items:center}}
+.pill{display:inline-block;background:var(--card);border:2px solid var(--line);border-radius:999px;padding:2px 14px;font-size:.85rem;color:var(--muted);justify-self:start}
+.hero h1{font-size:clamp(2.4rem,7vw,3.6rem);color:var(--pink-deep)}
+.hero h1 span{color:var(--ink)}
+.hero .sub{font-size:clamp(1.1rem,2.6vw,1.3rem);color:var(--ink);max-width:28em}
+.friends{display:flex;justify-content:center;align-items:flex-end;gap:4px}
+.friends img{width:31%;filter:drop-shadow(0 6px 0 rgba(0,0,0,.06))}
+.friends img:nth-child(2){width:38%;animation:bob 3s ease-in-out infinite}
+.friends img:nth-child(1){animation:bob 3s ease-in-out .4s infinite}
+.friends img:nth-child(3){animation:bob 3s ease-in-out .8s infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.sparkle{position:absolute;width:34px;opacity:.9}
 
-/* header */
-header.top{border-bottom:1px solid var(--rule);background:var(--sheet)}
-header.top .wrap{padding-top:44px;padding-bottom:36px;display:grid;gap:22px}
-header.top h1{font-size:clamp(2rem,5.2vw,3.1rem);font-weight:900;letter-spacing:.02em}
-header.top .sub{color:var(--muted);max-width:38em}
-.stamp{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;border:2px solid var(--red);color:var(--red);padding:12px 18px;border-radius:4px;max-width:max-content;transform:rotate(-.6deg)}
-.stamp strong{font-family:var(--serif);font-size:1.15rem}
-.stamp .count{font-family:var(--mono);font-size:1.05rem}
-.meta-line{font-size:.85rem;color:var(--muted)}
+.deadline{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;background:var(--card);border:3px dashed var(--pink);border-radius:22px;padding:12px 18px}
+.deadline img{width:42px}
+.deadline .t{color:var(--pink-deep);font-size:1.1rem}
+.deadline .days{margin-left:auto;background:var(--pink);color:#fff;border-radius:999px;padding:2px 16px;font-size:1.05rem}
 
-/* tables */
-.scroll{overflow-x:auto;border:1px solid var(--rule);border-radius:6px;background:var(--sheet)}
-table{border-collapse:collapse;width:100%;min-width:600px;font-size:.95rem}
-th,td{padding:10px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule-soft)}
-thead th{font-size:.8rem;letter-spacing:.06em;color:var(--muted);font-weight:500;background:var(--paper);border-bottom:1px solid var(--rule)}
+.verdict{background:var(--card);border-radius:28px;padding:24px 24px 20px;box-shadow:var(--shadow);border:2px solid var(--line);display:grid;gap:14px}
+.verdict-head{display:flex;gap:12px;align-items:center}
+.verdict-head img{width:52px}
+.verdict-head h2{font-size:1.6rem}
+.verdict-head p{color:var(--muted);font-size:.95rem}
+.verdict ol{margin:0;padding:0;list-style:none;display:grid;gap:10px;counter-reset:v}
+.verdict li{counter-increment:v;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;background:var(--bg);border-radius:18px;padding:12px 14px}
+.verdict li::before{content:counter(v);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sky);color:#fff;font-size:1.2rem}
+.verdict li span{display:block;color:var(--muted);font-size:.92rem}
+
+.counter{display:flex;align-items:center;gap:10px;justify-self:start;background:var(--sky-soft);color:var(--sky-deep);border-radius:999px;padding:6px 18px 6px 8px;font-size:.98rem}
+.counter img{width:34px}
+.counter .n{font-size:1.25rem}
+
+/* ---------- nav ---------- */
+nav.chips{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
+nav.chips ul{list-style:none;margin:0 auto;padding:10px 18px;max-width:860px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav.chips a{display:block;white-space:nowrap;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:999px;padding:2px 14px;font-size:.92rem}
+nav.chips a:hover{border-color:var(--pink);color:var(--pink-deep)}
+
+/* ---------- sections ---------- */
+main{display:grid;gap:30px;padding:34px 0 70px}
+.sec{background:var(--card);border:2px solid var(--line);border-radius:30px;padding:26px 22px;box-shadow:var(--shadow);display:grid;gap:18px;scroll-margin-top:70px}
+@media (min-width:720px){.sec{padding:32px 34px}}
+.sec-head{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center}
+.sec-head img{width:64px}
+.sec-head h2{font-size:clamp(1.55rem,4vw,2rem);color:var(--ink)}
+.sec-head p{color:var(--muted);font-size:1rem}
+h3{font-size:1.3rem}
+
+.conclusion{display:grid;grid-template-columns:54px 1fr;gap:12px;align-items:center;background:var(--mint-soft);border-radius:22px;padding:14px 18px}
+.conclusion img{width:54px}
+.conclusion .label{display:block;color:var(--mint-deep);font-size:.88rem;letter-spacing:.1em}
+.conclusion p{font-size:1.08rem}
+
+/* compare */
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media (min-width:680px){.two{grid-template-columns:1fr 1fr}}
+.side{border-radius:22px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+.side.pub{background:var(--sky-soft)}
+.side.pri{background:var(--pink-soft)}
+.side h3{display:flex;align-items:center;gap:8px}
+.side ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.side li{display:grid;grid-template-columns:4.2em 1fr;gap:8px;font-size:.98rem}
+.side li em{font-style:normal;color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted)}
+.fit{display:grid;gap:8px;grid-template-columns:1fr}
+@media (min-width:680px){.fit{grid-template-columns:1fr 1fr}}
+.fit div{border:2px dashed var(--line);border-radius:18px;padding:12px 16px;font-size:.98rem}
+
+/* table */
+.scroll{overflow-x:auto;border-radius:20px;border:2px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:.95rem}
+th,td{padding:10px 14px;text-align:left;vertical-align:middle;border-bottom:2px solid var(--line)}
+thead th{background:var(--bg);color:var(--muted);font-size:.85rem}
 tbody tr:last-child td{border-bottom:0}
 td.r,th.r{text-align:right}
 tr.pub td{color:var(--muted)}
-.barcell{display:flex;align-items:center;gap:10px;min-width:170px}
-.bar{height:10px;border-radius:2px;background:var(--bar);flex:none}
+.barcell{display:flex;align-items:center;gap:10px;min-width:180px}
+.bar{height:14px;border-radius:999px;background:var(--pink);flex:none}
 tr.pub .bar{background:var(--bar-pub)}
-.pick{font-size:.72rem;font-weight:700;color:var(--blue);border:1px solid var(--blue);border-radius:3px;padding:0 5px;margin-left:6px;white-space:nowrap}
-.notes{display:grid;gap:6px;font-size:.9rem;color:var(--muted);margin:0;padding-left:1.2em}
+.star-tag{font-size:.78rem;color:#fff;background:var(--sky);border-radius:999px;padding:0 8px;margin-left:6px;white-space:nowrap}
+.notes{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.9rem;color:var(--muted)}
 
-/* school entries */
-.schools{display:grid;gap:18px}
-.school{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:24px;display:grid;gap:14px}
-.school header{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
-.rank{font-family:var(--mono);font-size:.85rem;color:var(--blue)}
-.school .where{color:var(--muted);font-size:.92rem}
-.facts{display:grid;grid-template-columns:1fr;gap:0;margin:0;border-top:1px solid var(--rule-soft)}
-.facts div{display:grid;grid-template-columns:5.5em 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule-soft)}
-.facts dt{color:var(--muted);font-size:.9rem}
-.facts dd{margin:0}
-.caution{color:var(--red)}
+/* schools */
+.schools{display:grid;gap:16px}
+.school{border:2px solid var(--line);border-radius:26px;padding:20px;display:grid;gap:12px}
+.school-head{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:center}
+.school-head img{width:62px}
+.school-head h3{font-size:1.55rem}
+.school-head .where{color:var(--muted);font-size:.9rem}
+.oneliner{background:var(--pink-soft);border-radius:16px;padding:8px 14px}
+.facts{margin:0;display:grid}
+.facts div{display:grid;grid-template-columns:5em 1fr;gap:10px;padding:8px 0;border-top:2px dotted var(--line)}
+.facts dt{color:var(--muted);font-size:.92rem}
+.facts dd{margin:0;font-size:.98rem}
+.warn{color:var(--pink-deep)}
 .alts{display:grid;gap:10px;grid-template-columns:1fr}
-@media (min-width:700px){.alts{grid-template-columns:repeat(3,1fr)}}
-.alt{border-top:2px solid var(--rule);padding-top:10px;font-size:.95rem}
-.alt b{font-family:var(--serif)}
+@media (min-width:680px){.alts{grid-template-columns:repeat(3,1fr)}}
+.alts div{background:var(--bg);border-radius:18px;padding:12px 16px;font-size:.95rem}
+.alts h4{margin:0;font-weight:400;font-size:1.1rem;color:var(--sky-deep)}
 
-/* compare */
-.compare{display:grid;gap:0;grid-template-columns:1fr}
-@media (min-width:700px){.compare{grid-template-columns:1fr 1fr}}
-.col{background:var(--sheet);border:1px solid var(--rule);padding:22px;display:grid;gap:12px;align-content:start}
-@media (min-width:700px){.col+.col{border-left:0}}
-@media (max-width:699px){.col+.col{border-top:0}}
-.col ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
-.fit{background:var(--blue-soft);border-radius:6px;padding:16px 20px;display:grid;gap:6px}
-
-/* q&a */
-.qa{display:grid;gap:0;border-top:1px solid var(--rule)}
-.qa details{border-bottom:1px solid var(--rule);padding:4px 0}
-.qa summary{cursor:pointer;padding:12px 0;font-weight:700;list-style:none;display:flex;gap:12px;align-items:baseline}
+/* Q&A */
+.qa{display:grid;gap:10px}
+.qa details{background:var(--bg);border-radius:20px;padding:4px 18px}
+.qa summary{cursor:pointer;list-style:none;padding:12px 0;display:flex;gap:10px;align-items:center;font-size:1.08rem}
 .qa summary::-webkit-details-marker{display:none}
-.qa summary::before{content:"問";font-family:var(--serif);color:var(--blue);flex:none}
-.qa details>div{padding:0 0 16px 1.9em;display:grid;gap:10px}
-.formula{font-family:var(--mono);font-size:.92rem;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:12px 14px;overflow-x:auto}
+.qa summary::after{content:"＋";margin-left:auto;color:var(--pink-deep)}
+.qa details[open] summary::after{content:"－"}
+.qa .ans{padding:0 0 16px;display:grid;gap:10px}
+.qa .short{display:inline-block;background:var(--pink);color:#fff;border-radius:999px;padding:0 12px;font-size:.92rem}
+.formula{background:var(--card);border:2px dashed var(--line);border-radius:16px;padding:12px 14px;font-size:.95rem;overflow-x:auto}
 
-/* callout */
-.alert{border-left:4px solid var(--red);background:var(--red-soft);padding:16px 20px;border-radius:0 6px 6px 0;display:grid;gap:8px}
-.alert h3{color:var(--red)}
+.bigwarn{background:var(--pink-soft);border-radius:22px;padding:18px 20px;display:grid;gap:6px}
+.bigwarn p:first-child{font-size:1.2rem;color:var(--pink-deep)}
 
 /* timeline */
-.timeline{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:2px solid var(--rule);margin-left:6px}
-.timeline li{position:relative;padding:0 0 22px 26px;display:grid;gap:2px}
-.timeline li::before{content:"";position:absolute;left:-7px;top:.55em;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--blue)}
-.timeline li.due::before{border-color:var(--red);background:var(--red)}
-.timeline .when{font-family:var(--mono);font-size:.88rem;color:var(--blue)}
-.timeline li.due .when{color:var(--red)}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tl li{display:grid;grid-template-columns:8.6em 1fr;gap:12px;align-items:start;background:var(--bg);border-radius:18px;padding:12px 16px}
+@media (max-width:560px){.tl li{grid-template-columns:1fr;gap:2px}}
+.tl .when{color:var(--sky-deep)}
+.tl li.due{background:var(--pink-soft)}
+.tl li.due .when{color:var(--pink-deep)}
 
 /* cram */
 .cram{display:grid;gap:12px;grid-template-columns:1fr}
-@media (min-width:700px){.cram{grid-template-columns:1fr 1fr}}
-.cram article{background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:18px 20px;display:grid;gap:6px;align-content:start}
-.cram .tag{font-size:.8rem;color:var(--muted)}
+@media (min-width:680px){.cram{grid-template-columns:1fr 1fr}}
+.cram article{border:2px solid var(--line);border-radius:22px;padding:16px 18px;display:grid;gap:6px;align-content:start}
+.cram h3{font-size:1.15rem}
+.cram .tag{font-size:.85rem;color:var(--muted)}
 
 /* checklist */
-.checks{display:grid;gap:10px;margin:0;padding:0;list-style:none}
-.checks label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;background:var(--sheet);border:1px solid var(--rule);border-radius:6px;padding:14px 16px}
-.checks input{margin-top:.45em;width:18px;height:18px;accent-color:var(--blue);flex:none}
-.checks input:checked+span{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--rule)}
-.sources{font-size:.88rem;color:var(--muted);display:grid;gap:4px;padding-left:1.2em;margin:0}
-footer{border-top:1px solid var(--rule);padding:28px 0 48px;color:var(--muted);font-size:.85rem}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
-html{scroll-behavior:smooth}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checks label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;background:var(--bg);border-radius:18px;padding:12px 16px}
+.checks input{appearance:none;flex:none;width:26px;height:26px;margin-top:.2em;border:3px solid var(--pink);border-radius:50%;background:var(--card);display:grid;place-items:center;cursor:pointer}
+.checks input:checked{background:var(--pink)}
+.checks input:checked::after{content:"★";color:#fff;font-size:14px;line-height:1}
+.checks input:checked+span{color:var(--muted)}
+
+.sources{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.9rem;color:var(--muted)}
+footer{padding:10px 0 50px;color:var(--muted);font-size:.85rem;text-align:center}
+footer .wrap{display:grid;gap:6px;justify-items:center}
 </style>
 </head>
 <body>
 
-<header class="top">
+<header class="hero">
+  <img class="sparkle" src="img/star.png" alt="" style="top:18px;right:34%">
+  <img class="sparkle" src="img/star.png" alt="" style="bottom:26px;left:4%;width:26px">
   <div class="wrap">
-    <span class="eyebrow">116 學年度・2027 年 9 月入學</span>
-    <h1>板橋升私中決策筆記</h1>
-    <p class="sub">給正在考慮「讀學區公立國中，還是拚私中？」的家庭。整理了升學數據、三所推薦私中、入學方式、時間表和寒假衝刺班規劃，方便爸爸、媽媽和孩子一起討論。</p>
-    <div class="stamp" role="note">
-      <strong>竹林卓越營報名截止</strong>
-      <span class="num">2026/11/25（三）12:00</span>
-      <span class="count" id="countdown"></span>
+    <div class="hero-top">
+      <div style="display:grid;gap:14px">
+        <span class="pill">116 學年度・2027 年 9 月上國中</span>
+        <h1>升國中<span>大冒險！</span></h1>
+        <p class="sub">讀學區的海山國中，還是去考私中？<br>爸爸、媽媽和孩子一起來看看這份筆記。</p>
+      </div>
+      <div class="friends" aria-hidden="true">
+        <img src="img/rabbit.png" alt="">
+        <img src="img/hamster.png" alt="">
+        <img src="img/cat.png" alt="">
+      </div>
     </div>
-    <p class="meta-line">資料整理於 2026 年 9 月 13 日。116 學年度簡章多數還沒公布，標註「參考 115 年」的日期請以學校官網為準。</p>
+
+    <div class="deadline" role="note">
+      <img src="img/alarm.png" alt="">
+      <span class="t">竹林卓越營報名截止</span>
+      <span class="num">2026/11/25（三）中午 12:00</span>
+      <span class="days num" id="countdown">快截止了</span>
+    </div>
+
+    <section class="verdict" aria-labelledby="h-verdict">
+      <div class="verdict-head">
+        <img src="img/party.png" alt="">
+        <div>
+          <h2 id="h-verdict">先說結論</h2>
+          <p>忙的話，看完這三點就好</p>
+        </div>
+      </div>
+      <ol>
+        <li><p>私中主攻<b>南山、裕德、延平</b>其中一所<span>三所離家近、升學表現好，但考試可能在同一天，只能選一所。</span></p></li>
+        <li><p><b>11/25 前</b>報名竹林卓越營當保底<span>12/6 營隊剛好當作第一次實戰練習。</span></p></li>
+        <li><p>明年<b>寒假上短期衝刺班</b>就夠了<span>在班上名列前茅的孩子，不需要報整年的班。</span></p></li>
+      </ol>
+    </section>
+
+    <div class="counter" aria-live="polite">
+      <img src="img/eyes.png" alt="">
+      <span>已經有 <span class="n num" id="visits">…</span> 人次來看過這份筆記</span>
+    </div>
   </div>
 </header>
 
-<div class="wrap">
-  <div class="grid">
-    <nav class="toc" aria-label="目錄">
-      <ol>
-        <li><a href="#compare">公立 vs 私立</a></li>
-        <li><a href="#data">升學數據</a></li>
-        <li><a href="#picks">三所推薦</a></li>
-        <li><a href="#admission">入學方式問答</a></li>
-        <li><a href="#strategy">撞期策略</a></li>
-        <li><a href="#timeline">時間表</a></li>
-        <li><a href="#cram">寒假衝刺班</a></li>
-        <li><a href="#talk">全家討論清單</a></li>
-        <li><a href="#sources">資料來源</a></li>
-      </ol>
-    </nav>
+<nav class="chips" aria-label="章節">
+  <ul>
+    <li><a href="#compare">公立 vs 私立</a></li>
+    <li><a href="#data">升學數據</a></li>
+    <li><a href="#picks">三所推薦</a></li>
+    <li><a href="#admission">要考試嗎</a></li>
+    <li><a href="#strategy">撞期</a></li>
+    <li><a href="#timeline">時間表</a></li>
+    <li><a href="#cram">衝刺班</a></li>
+    <li><a href="#talk">全家討論</a></li>
+    <li><a href="#sources">資料來源</a></li>
+  </ul>
+</nav>
 
-    <main>
-      <!-- 公立 vs 私立 -->
-      <section id="compare" aria-labelledby="h-compare">
+<main class="wrap">
+
+  <!-- 1 公立 vs 私立 -->
+  <section class="sec" id="compare" aria-labelledby="h-compare">
+    <div class="sec-head">
+      <img src="img/school.png" alt="">
+      <div>
         <h2 id="h-compare">公立國中 vs 私立國中</h2>
-        <p class="lede">起點是一個很實際的問題：讀學區的海山國中，放學後還要自己走去安親班。私中大多有晚自習和校車，能把這段接上，但代價是學費和更緊的作息。</p>
-        <div class="compare">
-          <div class="col">
-            <h3>公立（例：海山國中）</h3>
-            <ul>
-              <li><b>費用</b>：義務教育，只收少量代收代辦費</li>
-              <li><b>入學</b>：依戶籍學區分發，不用考試</li>
-              <li><b>放學後</b>：約 4 點放學，要接安親班或補習班</li>
-              <li><b>管理</b>：較自由，學生程度差異大</li>
-              <li><b>學習</b>：五育均衡、社團活動多、步調彈性</li>
-              <li><b>同學</b>：鄰近社區，生活圈近</li>
-            </ul>
-            <p class="meta-line">海山國中是「新北市立海山高中國中部」，市立完全中學，國中部 87 班，規模很大。</p>
-          </div>
-          <div class="col">
-            <h3>私立</h3>
-            <ul>
-              <li><b>費用</b>：每學期約 7～9 萬元起，各校差很多</li>
-              <li><b>入學</b>：營隊、書審或競賽，有名額限制</li>
-              <li><b>放學後</b>：多有晚自習、校車，通常不必再上安親班</li>
-              <li><b>管理</b>：較嚴格，手機要交給老師、服裝儀容要求多</li>
-              <li><b>學習</b>：升學導向、進度快、小考多，分班或分學程</li>
-              <li><b>同學</b>：來自各區，程度相近</li>
-            </ul>
-            <p class="meta-line">公私立都一樣要考國中教育會考，私中沒有免試保證。</p>
-          </div>
-        </div>
-        <div class="fit">
-          <p><b>比較適合私中的孩子：</b>基礎穩、需要外在作息結構才會啟動、能接受嚴格管理。</p>
-          <p><b>比較適合公立的孩子：</b>還有學習缺口要補、自我要求高容易焦慮，或需要時間發展才藝和興趣。</p>
-        </div>
-      </section>
-
-      <!-- 升學數據 -->
-      <section id="data" aria-labelledby="h-data">
-        <h2 id="h-data">升學數據：考上建中、北一女的比例</h2>
-        <p class="lede">除了離家近，我們再加上「升學表現」這個條件。下表是各校國中部學生透過會考考上前三志願的人數，長條圖依 114 年比例繪製。</p>
-        <div class="scroll">
-          <table>
-            <thead>
-              <tr>
-                <th>學校</th>
-                <th>地點／離板橋</th>
-                <th>114 年 建中＋北一女＋附中</th>
-                <th class="r">115 年 建中＋北一女</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>靜心</td><td>台北文山・約 1 小時</td><td><div class="barcell"><span class="bar" style="width:107px"></span><span class="num">26.7%</span><span class="num" style="color:var(--muted)">50/187</span></div></td><td class="r num">47 人・24.6%</td></tr>
-              <tr><td>裕德<span class="pick">推薦</span></td><td>土城・緊鄰板橋</td><td><div class="barcell"><span class="bar" style="width:105px"></span><span class="num">26.1%</span><span class="num" style="color:var(--muted)">23/88</span></div></td><td class="r num">14 人・13.7%</td></tr>
-              <tr><td>延平<span class="pick">推薦</span></td><td>台北大安・捷運約 40 分</td><td><div class="barcell"><span class="bar" style="width:62px"></span><span class="num">15.4%</span><span class="num" style="color:var(--muted)">33/214</span></div></td><td class="r num">31 人</td></tr>
-              <tr><td>南山<span class="pick">推薦</span></td><td>中和景安・約 20 分</td><td><div class="barcell"><span class="bar" style="width:52px"></span><span class="num">13.0%</span><span class="num" style="color:var(--muted)">69/533</span></div></td><td class="r num">38 人</td></tr>
-              <tr class="pub"><td>板橋中山國中（公立）</td><td>板橋</td><td><div class="barcell"><span class="bar" style="width:26px"></span><span class="num">6.5%</span><span class="num">59/911</span></div></td><td class="r num">40 人・4.45%</td></tr>
-              <tr class="pub"><td>海山國中部（公立）</td><td>板橋</td><td><div class="barcell"><span class="bar" style="width:16px"></span><span class="num">4.0%</span><span class="num">34/843</span></div></td><td class="r num">37 人・4.30%</td></tr>
-              <tr><td>竹林</td><td>中和南勢角・約 25 分</td><td><div class="barcell"><span class="bar" style="width:13px"></span><span class="num">3.3%</span><span class="num" style="color:var(--muted)">10/303</span></div></td><td class="r num">21 人・9.95%</td></tr>
-              <tr><td>光仁</td><td>板橋・最近</td><td style="color:var(--muted)">沒有公開數據</td><td class="r" style="color:var(--muted)">沒有公開數據</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <ul class="notes">
-          <li>分母是參加會考的外考學生。延平 486 位畢業生中外考 214 位；南山 961 位中直升 428 位、外考 533 位；裕德會考班 88 位。</li>
-          <li>115 年只統計建中、北一女，114 年多了附中，兩年比例不能直接相比；延平、南山 115 年未公布分母。</li>
-          <li>私中比例高，部分原因是本來就招收前段學生，不完全等於教得比較好；直升自家高中部的學生也沒算進去。</li>
-          <li>小規模學校每年波動大（竹林 3.3%→9.95%、裕德 26.1%→13.7%），建議看兩年以上。</li>
+        <p>兩種學校，放學後的生活差最多</p>
+      </div>
+    </div>
+    <div class="two">
+      <div class="side pub">
+        <h3>公立（例：海山國中）</h3>
+        <ul>
+          <li><em>費用</em><span>義務教育，只收少量代收代辦費</span></li>
+          <li><em>入學</em><span>依戶籍學區分發，不用考試</span></li>
+          <li><em>放學後</em><span>約 4 點放學，要自己去安親班</span></li>
+          <li><em>管理</em><span>比較自由，同學程度差異大</span></li>
+          <li><em>學習</em><span>社團活動多，步調有彈性</span></li>
         </ul>
-      </section>
+        <p class="note">海山國中是「海山高中國中部」，市立完全中學，國中部 87 班。</p>
+      </div>
+      <div class="side pri">
+        <h3>私立</h3>
+        <ul>
+          <li><em>費用</em><span>每學期約 7～9 萬元起</span></li>
+          <li><em>入學</em><span>營隊、書審或競賽，有名額限制</span></li>
+          <li><em>放學後</em><span>有晚自習和校車，通常不用上安親班</span></li>
+          <li><em>管理</em><span>比較嚴格，手機要交給老師</span></li>
+          <li><em>學習</em><span>進度快、小考多，會分班</span></li>
+        </ul>
+        <p class="note">公私立都一樣要考國中教育會考。</p>
+      </div>
+    </div>
+    <div class="fit">
+      <div><b>比較適合私中：</b>基礎穩、需要有人安排作息、能接受嚴格管理。</div>
+      <div><b>比較適合公立：</b>還有學習缺口要補、容易焦慮，或想留時間給興趣。</div>
+    </div>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>私中能省掉放學走去安親班的麻煩，但要付學費，作息也比較緊。</p></div>
+    </div>
+  </section>
 
-      <!-- 三所推薦 -->
-      <section id="picks" aria-labelledby="h-picks">
+  <!-- 2 升學數據 -->
+  <section class="sec" id="data" aria-labelledby="h-data">
+    <div class="sec-head">
+      <img src="img/chart.png" alt="">
+      <div>
+        <h2 id="h-data">升學數據</h2>
+        <p>哪些學校考上建中、北一女的比例高？</p>
+      </div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>學校</th><th>地點</th><th>114 年 建中＋北一女＋附中</th><th class="r">115 年 建中＋北一女</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>靜心</td><td>台北文山・約 1 小時</td><td><div class="barcell"><span class="bar" style="width:107px"></span><span class="num">26.7%</span></div></td><td class="r num">47 人・24.6%</td></tr>
+          <tr><td>裕德<span class="star-tag">推薦</span></td><td>土城・緊鄰板橋</td><td><div class="barcell"><span class="bar" style="width:105px"></span><span class="num">26.1%</span></div></td><td class="r num">14 人・13.7%</td></tr>
+          <tr><td>延平<span class="star-tag">推薦</span></td><td>台北大安・約 40 分</td><td><div class="barcell"><span class="bar" style="width:62px"></span><span class="num">15.4%</span></div></td><td class="r num">31 人</td></tr>
+          <tr><td>南山<span class="star-tag">推薦</span></td><td>中和景安・約 20 分</td><td><div class="barcell"><span class="bar" style="width:52px"></span><span class="num">13.0%</span></div></td><td class="r num">38 人</td></tr>
+          <tr class="pub"><td>板橋中山國中（公立）</td><td>板橋</td><td><div class="barcell"><span class="bar" style="width:26px"></span><span class="num">6.5%</span></div></td><td class="r num">40 人・4.45%</td></tr>
+          <tr class="pub"><td>海山國中部（公立）</td><td>板橋</td><td><div class="barcell"><span class="bar" style="width:16px"></span><span class="num">4.0%</span></div></td><td class="r num">37 人・4.30%</td></tr>
+          <tr><td>竹林</td><td>中和南勢角・約 25 分</td><td><div class="barcell"><span class="bar" style="width:13px"></span><span class="num">3.3%</span></div></td><td class="r num">21 人・9.95%</td></tr>
+          <tr><td>光仁</td><td>板橋・最近</td><td class="note">沒有公開數據</td><td class="r note">沒有公開數據</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="notes">
+      <li>比例的分母是參加會考的外考學生；直升自家高中部的學生不算在內（例如南山 114 年直升 428 人）。</li>
+      <li>115 年只統計建中、北一女，114 年多了附中，兩年比例不能直接相比；延平、南山 115 年沒有公布分母。</li>
+      <li>小學校每年波動大（竹林 3.3%→9.95%、裕德 26.1%→13.7%），建議看兩年以上。</li>
+    </ul>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>裕德、延平、南山的升學比例是板橋公立國中的 3～6 倍，但有一部分是因為招進來的學生本來就很優秀。</p></div>
+    </div>
+  </section>
+
+  <!-- 3 三所推薦 -->
+  <section class="sec" id="picks" aria-labelledby="h-picks">
+    <div class="sec-head">
+      <img src="img/star.png" alt="">
+      <div>
         <h2 id="h-picks">三所推薦私中</h2>
-        <p class="lede">選校條件：<mark>離板橋近</mark>、<mark>升學表現好</mark>、<mark>有晚自習或校車能取代安親班</mark>，而且國中、高中都有。如果孩子在班上名列前茅（例如全班前五名），這三所都值得一拚。</p>
-        <div class="schools">
-          <article class="school">
-            <header><span class="rank">第一推薦</span><h3>南山中學</h3><span class="where">新北市中和區・捷運景安站附近</span></header>
-            <p>離家近、升學實力強，綜合條件最平衡。</p>
-            <dl class="facts">
-              <div><dt>推薦理由</dt><dd>新北私中考上建北人數最多（114 年 69 人），高中部 115 年學測成績新北第一；有數理實驗班、語文實驗班和普通班。</dd></div>
-              <div><dt>交通</dt><dd>環狀線到景安站約 15～20 分鐘，也有校車。</dd></div>
-              <div><dt>費用</dt><dd>每學期約 <span class="num">7.5～9</span> 萬元，優異學生有入學獎學金。</dd></div>
-              <div><dt>入學方式</dt><dd>「書面審查優先入學」＋ 3 月「學藝競賽」。書審看四上到五下成績、自傳、得獎和檢定；競賽成績決定分到哪個班群。</dd></div>
-              <div><dt>難度</dt><dd>中高。家長經驗是普通班約需班級前 20～30%，實驗班約需前 10%。</dd></div>
-            </dl>
-          </article>
-
-          <article class="school">
-            <header><span class="rank">第二推薦</span><h3>裕德高中</h3><span class="where">新北市土城區擺接堡路 1 號・緊鄰板橋</span></header>
-            <p>離家最近的高升學比例學校，雙語、小班制。</p>
-            <dl class="facts">
-              <div><dt>推薦理由</dt><dd>會考班人數少（約 90～100 人），考上建北的比例是新北最高（114 年 26.1%、115 年 13.7%）。</dd></div>
-              <div><dt>交通</dt><dd>就在板橋隔壁，學校依住家位置規劃交通車路線。</dd></div>
-              <div><dt>費用</dt><dd>三所中最貴：註冊費每學期約 <span class="num">6</span> 萬元，另有雙語課程費、書籍費（每學期約 <span class="num">1.2～1.5</span> 萬元）、午餐、交通、制服。</dd></div>
-              <div><dt>入學方式</dt><dd>課程教學說明會＋性向探索活動（115 年在 3/14）。</dd></div>
-              <div><dt>留意</dt><dd class="caution">偏雙語和國際路線，要確認符合家庭的教育理念和預算。</dd></div>
-            </dl>
-          </article>
-
-          <article class="school">
-            <header><span class="rank">第三推薦</span><h3>延平中學</h3><span class="where">台北市大安區建國南路・捷運約 40 分鐘</span></header>
-            <p>老牌明星私中，升學表現穩定，但最難考、通勤最遠。</p>
-            <dl class="facts">
-              <div><dt>推薦理由</dt><dd>兩年都有三十多人考上建北，外考學生錄取比例約 15%。</dd></div>
-              <div><dt>交通</dt><dd>板南線加步行約 40 分鐘，是三所中最遠的。</dd></div>
-              <div><dt>費用</dt><dd>國中部一年約 <span class="num">15</span> 萬元。</dd></div>
-              <div><dt>入學方式</dt><dd>國一新生甄選：國語文綜合能力（含作文）、數學邏輯推理、英語文綜合能力。115 年在 3/14。</dd></div>
-              <div><dt>難度</dt><dd class="caution">最高。115 年約 3,800 人報名，錄取率約 13%。</dd></div>
-            </dl>
-          </article>
+        <p>挑選條件：離板橋近＋升學表現好＋有晚自習或校車</p>
+      </div>
+    </div>
+    <div class="schools">
+      <article class="school">
+        <div class="school-head">
+          <img src="img/medal1.png" alt="第一推薦">
+          <div><h3>南山中學</h3><span class="where">新北市中和區・捷運景安站附近</span></div>
         </div>
-
-        <h3>也可以考慮</h3>
-        <div class="alts">
-          <div class="alt"><b>竹林中學</b>（中和）<br>115 年升學進步明顯，入學方式最透明友善，116 簡章已公布，適合當保底。</div>
-          <div class="alt"><b>光仁中學</b>（板橋）<br>離家最近，晚自習到 20:40、有校車和宿舍，但沒有公開升學數據，說明會時要直接問。</div>
-          <div class="alt"><b>靜心中學</b>（台北文山）<br>升學比例最高（約 25%），但從板橋通勤約 1 小時，較不建議。</div>
+        <p class="oneliner">離家近、升學實力強，綜合條件最平衡。</p>
+        <dl class="facts">
+          <div><dt>推薦理由</dt><dd>新北私中考上建北人數最多（114 年 69 人），高中部 115 年學測新北第一；有數理、語文實驗班。</dd></div>
+          <div><dt>交通</dt><dd>環狀線到景安站約 15～20 分鐘，也有校車。</dd></div>
+          <div><dt>費用</dt><dd>每學期約 <span class="num">7.5～9</span> 萬元。</dd></div>
+          <div><dt>入學方式</dt><dd>書面審查優先入學＋ 3 月學藝競賽，競賽成績決定分到哪一班。</dd></div>
+          <div><dt>難度</dt><dd>中高：普通班約需班級前 20～30%，實驗班約需前 10%。</dd></div>
+        </dl>
+      </article>
+      <article class="school">
+        <div class="school-head">
+          <img src="img/medal2.png" alt="第二推薦">
+          <div><h3>裕德高中</h3><span class="where">新北市土城區擺接堡路 1 號・緊鄰板橋</span></div>
         </div>
-      </section>
-
-      <!-- 入學方式問答 -->
-      <section id="admission" aria-labelledby="h-admission">
-        <h2 id="h-admission">入學方式問答</h2>
-        <div class="qa">
-          <details open>
-            <summary>私中都要筆試才能進去嗎？</summary>
-            <div>
-              <p>名義上都不是筆試，但實際上都會評量國語、英語、數學。教育部規定私立國中不能辦學科考試，所以學校改稱「觀察營」「探索營」「競賽」「甄選」，孩子一樣要作答。</p>
-            </div>
-          </details>
-          <details>
-            <summary>只憑五年級成績就能錄取嗎？</summary>
-            <div>
-              <p>不行。最接近的是<b>南山的書面審查優先入學</b>：繳交四上到五下成績單、孩子親筆寫的自傳、最多 10 項得獎或檢定證明，通過就先取得資格，但<b>一定還要參加學藝競賽</b>，缺席就取消資格。</p>
-              <p>加分項目包括：總統教育獎、科展和語文競賽得獎、數學奧林匹亞、AMC8、全民英檢初級、劍橋 KET 以上、模範生等。</p>
-            </div>
-          </details>
-          <details>
-            <summary>參加竹林卓越營就能錄取嗎？</summary>
-            <div>
-              <p>不是參加就錄取，營隊要打分數。簡章上的計算方式：</p>
-              <p class="formula">總分 = 五年級成績 × 20% + 營隊表現 × 80% + 多元表現加分（每項 1 分，最多 3 分）<br>例：成績全優 100 分、營隊 90 分、演講獎狀 1 張 → 100×20% + 90×80% + 1 = 93 分</p>
-              <p>營隊內容是國語、英語、數學活動（範圍小一到小六上），前 20% 有 1 萬元獎學金。沒上的話，還有 2027/3/7 的竹林盃可以報名。</p>
-            </div>
-          </details>
-          <details>
-            <summary>一定要上私中衝刺班嗎？</summary>
-            <div>
-              <p>不一定。基礎穩的孩子，寒假短期特訓就夠了，重點放在熟悉目標學校的題型，例如延平的作文和英語聽力。先做免費的準備：參加各校體驗營、練英檢初級、多讀文章練閱讀理解。</p>
-            </div>
-          </details>
+        <p class="oneliner">離家最近的高升學比例學校，雙語、小班制。</p>
+        <dl class="facts">
+          <div><dt>推薦理由</dt><dd>會考班只有約 90～100 人，考上建北的比例是新北最高（114 年 26.1%、115 年 13.7%）。</dd></div>
+          <div><dt>交通</dt><dd>就在板橋隔壁，學校依住家位置規劃交通車。</dd></div>
+          <div><dt>費用</dt><dd>三所中最貴：註冊費每學期約 <span class="num">6</span> 萬元，另有雙語課程費、書籍費、午餐、交通、制服。</dd></div>
+          <div><dt>入學方式</dt><dd>課程說明會＋性向探索活動（115 年在 3/14）。</dd></div>
+          <div><dt>留意</dt><dd class="warn">偏雙語、國際路線，要確認符合家裡的教育理念和預算。</dd></div>
+        </dl>
+      </article>
+      <article class="school">
+        <div class="school-head">
+          <img src="img/medal3.png" alt="第三推薦">
+          <div><h3>延平中學</h3><span class="where">台北市大安區建國南路・捷運約 40 分鐘</span></div>
         </div>
-      </section>
+        <p class="oneliner">老牌明星私中，升學穩定，但最難考、通勤最遠。</p>
+        <dl class="facts">
+          <div><dt>推薦理由</dt><dd>兩年都有三十多人考上建北，外考學生錄取比例約 15%。</dd></div>
+          <div><dt>交通</dt><dd>板南線加步行約 40 分鐘。</dd></div>
+          <div><dt>費用</dt><dd>國中部一年約 <span class="num">15</span> 萬元。</dd></div>
+          <div><dt>入學方式</dt><dd>新生甄選：國語文（含作文）、數學邏輯推理、英語（115 年在 3/14）。</dd></div>
+          <div><dt>難度</dt><dd class="warn">最高：115 年約 3,800 人報名，錄取率約 13%。</dd></div>
+        </dl>
+      </article>
+    </div>
+    <h3>也可以考慮</h3>
+    <div class="alts">
+      <div><h4>竹林中學</h4>115 年升學進步明顯，入學方式最友善，適合當保底。</div>
+      <div><h4>光仁中學</h4>離家最近，晚自習到 20:40、有校車和宿舍，但沒有公開升學數據。</div>
+      <div><h4>靜心中學</h4>升學比例最高（約 25%），但從板橋通勤約 1 小時。</div>
+    </div>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>想要綜合最平衡選<b>南山</b>；想要最近又小班選<b>裕德</b>；想挑戰最難的選<b>延平</b>。</p></div>
+    </div>
+  </section>
 
-      <!-- 撞期策略 -->
-      <section id="strategy" aria-labelledby="h-strategy">
-        <h2 id="h-strategy">撞期策略</h2>
-        <div class="alert">
-          <h3>三所推薦學校的考試很可能在同一天</h3>
-          <p>115 年的南山、延平、裕德都在 <b class="num">3/14（六）</b>，116 年很可能也會撞期，只能選一所去考。</p>
+  <!-- 4 要考試嗎 -->
+  <section class="sec" id="admission" aria-labelledby="h-admission">
+    <div class="sec-head">
+      <img src="img/question.png" alt="">
+      <div>
+        <h2 id="h-admission">私中要考試嗎？</h2>
+        <p>點開問題看答案</p>
+      </div>
+    </div>
+    <div class="qa">
+      <details open>
+        <summary>一定要筆試嗎？</summary>
+        <div class="ans">
+          <span class="short">名義上不是，實際上會考</span>
+          <p>教育部規定私立國中不能辦學科考試，所以學校改叫「觀察營」「探索營」「競賽」「甄選」，但孩子一樣要寫國語、英語、數學的題目。</p>
         </div>
-        <p><b>建議組合：</b>主攻一所（南山、延平或裕德）＋ 12/6 竹林卓越營當保底。</p>
-        <p>竹林 12/23～24 就要報到，比其他學校放榜早。報到前請先問清楚：之後如果改讀別校，報到費能不能退？</p>
-      </section>
+      </details>
+      <details>
+        <summary>只看五年級成績就能錄取嗎？</summary>
+        <div class="ans">
+          <span class="short">不行</span>
+          <p>最接近的是<b>南山的書面審查優先入學</b>：交四上到五下成績單、孩子親筆寫的自傳、最多 10 項得獎或檢定證明，通過就先拿到資格，但<b>一定還要參加學藝競賽</b>，沒去就取消。</p>
+          <p class="note">可加分：科展和語文競賽得獎、數學奧林匹亞、AMC8、全民英檢初級、劍橋 KET 以上、模範生等。</p>
+        </div>
+      </details>
+      <details>
+        <summary>參加竹林卓越營就能錄取嗎？</summary>
+        <div class="ans">
+          <span class="short">不是，營隊要打分數</span>
+          <p class="formula">總分 = 五年級成績 × 20% ＋ 營隊表現 × 80% ＋ 多元表現加分（每項 1 分，最多 3 分）<br>例：成績全優 100 分、營隊 90 分、演講獎狀 1 張 → 100×20% ＋ 90×80% ＋ 1 ＝ 93 分</p>
+          <p>營隊考國語、英語、數學活動（範圍小一到小六上），前 20% 有 1 萬元獎學金。沒上的話，還有 2027/3/7 的竹林盃。</p>
+        </div>
+      </details>
+    </div>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>三所學校都要到現場接受國語、英語、數學評量，在校成績只是加分。</p></div>
+    </div>
+  </section>
 
-      <!-- 時間表 -->
-      <section id="timeline" aria-labelledby="h-timeline">
+  <!-- 5 撞期 -->
+  <section class="sec" id="strategy" aria-labelledby="h-strategy">
+    <div class="sec-head">
+      <img src="img/warning.png" alt="">
+      <div>
+        <h2 id="h-strategy">小心考試撞期！</h2>
+        <p>三所推薦學校可能在同一天考試</p>
+      </div>
+    </div>
+    <div class="bigwarn">
+      <p>115 年南山、延平、裕德都在 <span class="num">3/14（六）</span></p>
+      <p>116 年很可能也會撞期，只能選一所去考。</p>
+    </div>
+    <p>竹林 12/23～24 就要報到，比其他學校放榜早。報到前請先問清楚：之後改讀別校，報到費能不能退？</p>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>選<b>一所主攻</b>（南山、裕德或延平）＋<b>竹林卓越營當保底</b>。</p></div>
+    </div>
+  </section>
+
+  <!-- 6 時間表 -->
+  <section class="sec" id="timeline" aria-labelledby="h-timeline">
+    <div class="sec-head">
+      <img src="img/calendar.png" alt="">
+      <div>
         <h2 id="h-timeline">時間表</h2>
-        <ol class="timeline">
-          <li><span class="when">2026 年 9～10 月</span><span>去補習班試聽、做程度檢測；追蹤延平、裕德、南山、光仁公布的 116 學年度簡章。</span></li>
-          <li><span class="when">10 月底前</span><span>全家決定主攻哪一所。</span></li>
-          <li><span class="when">11 月</span><span>報名寒假衝刺班（常有早鳥優惠，名額有限）；準備南山書審資料：自傳、四上到五下成績單、獎狀。光仁 11 月到 1 月有雙語和樂學體驗營。</span></li>
-          <li class="due"><span class="when">11/25（三）12:00</span><span>竹林卓越營報名截止，報名費 600 元，要上傳五年級上下學期成績單。</span></li>
-          <li class="due"><span class="when">12/6（日）</span><span>竹林卓越探索營，剛好當作第一次實戰練習。</span></li>
-          <li><span class="when">12/21～12/24</span><span>竹林公布結果（12/21），12/23～24 報到。</span></li>
-          <li><span class="when">12/31 前（參考 115 年）</span><span>寄出南山書面審查資料，以郵戳為憑。</span></li>
-          <li><span class="when">2027 年 1 月下旬～2 月</span><span>寒假衝刺班；春節約在 2/6，前後會停課。</span></li>
-          <li><span class="when">3 月初～中（參考 115 年）</span><span>光仁觀察營、竹林盃（3/7）、南山學藝競賽、延平甄選、裕德性向探索。</span></li>
-          <li><span class="when">3 月中</span><span>放榜後幾天內要報到繳費，報到費通常不退。沒有報到私中的話，照常依學區分發到海山國中。</span></li>
-        </ol>
-      </section>
+        <p>從現在到明年三月，照順序一步一步來</p>
+      </div>
+    </div>
+    <ol class="tl">
+      <li><span class="when">2026 年 9～10 月</span><span>去補習班試聽、做程度檢測；追蹤各校公布的 116 學年度簡章。</span></li>
+      <li><span class="when">10 月底前</span><span>全家決定主攻哪一所。</span></li>
+      <li><span class="when">11 月</span><span>報名寒假衝刺班；準備南山書審資料（自傳、成績單、獎狀）。</span></li>
+      <li class="due"><span class="when">11/25 中午前</span><span>竹林卓越營報名截止（報名費 600 元，要上傳五年級成績單）。</span></li>
+      <li class="due"><span class="when">12/6（日）</span><span>竹林卓越探索營，當作第一次實戰練習。</span></li>
+      <li><span class="when">12/21～24</span><span>竹林公布結果，12/23～24 報到。</span></li>
+      <li><span class="when">12/31 前</span><span>寄出南山書面審查資料（參考 115 年日期）。</span></li>
+      <li><span class="when">2027 年 1 月下旬～2 月</span><span>寒假衝刺班，春節（約 2/6）前後停課。</span></li>
+      <li><span class="when">3 月初～中</span><span>光仁觀察營、竹林盃（3/7）、南山學藝競賽、延平甄選、裕德性向探索（參考 115 年）。</span></li>
+      <li><span class="when">3 月中</span><span>放榜後幾天內報到繳費；沒有報到私中，就照常分發到海山國中。</span></li>
+    </ol>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>最近最急的一件事：<b>11/25 中午前報名竹林卓越營</b>。</p></div>
+    </div>
+  </section>
 
-      <!-- 寒假衝刺班 -->
-      <section id="cram" aria-labelledby="h-cram">
+  <!-- 7 衝刺班 -->
+  <section class="sec" id="cram" aria-labelledby="h-cram">
+    <div class="sec-head">
+      <img src="img/pencil.png" alt="">
+      <div>
         <h2 id="h-cram">寒假私中衝刺班</h2>
-        <p class="lede">以下依官網和公開資訊整理，無法確認教學品質和錄取率，一定要先試聽。文城和陳立在府中站同一棟樓，一個下午可以兩家一起比較。</p>
-        <div class="cram">
-          <article>
-            <h3>文城教育學院 板橋教室</h3>
-            <span class="tag">府中路 29-1 號 2 樓（府中站 1 號出口）・02-8965-3555</span>
-            <p>寒假私中入學特訓，附程度檢測報告；學期中有「升私中無雙班」（資優數學邏輯思考、國文閱讀理解素養）。</p>
-          </article>
-          <article>
-            <h3>陳立教育 板橋旗艦校</h3>
-            <span class="tag">府中路 29 之 1 號 9～10 樓・(02) 2965-0373</span>
-            <p>私校入學特訓班、六下數學精修班。大型連鎖，主力在國高中。</p>
-          </article>
-          <article>
-            <h3>高明一對一 板橋分校</h3>
-            <span class="tag">海山國小附近・電話請以官網為準</span>
-            <p>考私中班，一對一教學，適合只想加強弱項（例如作文）。</p>
-          </article>
-          <article>
-            <h3>永康 VIP 考私中補習班</h3>
-            <span class="tag">台北永康街（東門站）・02-2392-7654</span>
-            <p>專攻延平、東山、復興等台北私中的歷屆題型，一對一。以延平為目標時可以考慮。</p>
-          </article>
-        </div>
-        <p><b>報名前要問：</b>有沒有針對目標學校的題型練習？一班幾個人？寒假班總共幾堂、多少錢？中途退班怎麼退費？可以先試聽嗎？</p>
-      </section>
+        <p>基礎好的孩子，寒假短期班就夠了</p>
+      </div>
+    </div>
+    <div class="cram">
+      <article>
+        <h3>文城教育學院 板橋教室</h3>
+        <span class="tag">府中路 29-1 號 2 樓（府中站 1 號出口）・02-8965-3555</span>
+        <p>寒假私中入學特訓，附程度檢測報告。</p>
+      </article>
+      <article>
+        <h3>陳立教育 板橋旗艦校</h3>
+        <span class="tag">府中路 29 之 1 號 9～10 樓・(02) 2965-0373</span>
+        <p>私校入學特訓班、六下數學精修班。</p>
+      </article>
+      <article>
+        <h3>高明一對一 板橋分校</h3>
+        <span class="tag">海山國小附近・電話請以官網為準</span>
+        <p>考私中班，一對一，適合加強弱項（例如作文）。</p>
+      </article>
+      <article>
+        <h3>永康 VIP 考私中補習班</h3>
+        <span class="tag">台北永康街（東門站）・02-2392-7654</span>
+        <p>專攻延平等台北私中題型，以延平為目標時可以考慮。</p>
+      </article>
+    </div>
+    <p class="note">依官網和公開資訊整理，無法確認教學品質，一定要先試聽。報名前記得問：有沒有針對目標學校的題型？一班幾人？寒假班幾堂、多少錢？怎麼退費？</p>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>文城和陳立在府中站<b>同一棟樓</b>，一個下午就能兩家一起試聽比較，11 月報名。</p></div>
+    </div>
+  </section>
 
-      <!-- 討論清單 -->
-      <section id="talk" aria-labelledby="h-talk">
-        <h2 id="h-talk">全家討論清單</h2>
-        <p class="lede">討論過的項目可以打勾，勾選紀錄只會存在這台裝置的瀏覽器裡。</p>
-        <ul class="checks" id="checks">
-          <li><label><input type="checkbox" data-k="want"><span><b>孩子自己想去哪裡？</b>帶她參加體驗營和說明會後再問一次。</span></label></li>
-          <li><label><input type="checkbox" data-k="cost"><span><b>算一筆帳：</b>「公立＋安親班或補習 × 3 年」vs「私中學費＋校車＋晚自習 × 3 年」。</span></label></li>
-          <li><label><input type="checkbox" data-k="hours"><span><b>每天在外面的時間：</b>私中上學加晚自習可能從早上 7 點到晚上 9 點，受得了嗎？</span></label></li>
-          <li><label><input type="checkbox" data-k="alt"><span><b>不讀私中還有別的解法嗎？</b>例如海山的第八節和課後輔導，或找有接送服務的安親班。</span></label></li>
-          <li><label><input type="checkbox" data-k="strict"><span><b>嚴格管理適合她嗎？</b>手機要交出去、考試多，會覺得有安全感還是壓力很大？</span></label></li>
-          <li><label><input type="checkbox" data-k="target"><span><b>主攻哪一所？</b>南山、裕德、延平考試可能撞期，只能選一所。</span></label></li>
-          <li><label><input type="checkbox" data-k="zhulin"><span><b>要不要報竹林卓越營當保底？</b>11/25 中午截止。</span></label></li>
-        </ul>
-      </section>
+  <!-- 8 全家討論 -->
+  <section class="sec" id="talk" aria-labelledby="h-talk">
+    <div class="sec-head">
+      <img src="img/talk.png" alt="">
+      <div>
+        <h2 id="h-talk">全家一起討論</h2>
+        <p>聊過的題目點一下，會亮起星星</p>
+      </div>
+    </div>
+    <ul class="checks" id="checks">
+      <li><label><input type="checkbox" data-k="want"><span><b>我自己想去哪一間？</b>參加體驗營和說明會之後，再想一次。</span></label></li>
+      <li><label><input type="checkbox" data-k="cost"><span><b>算一筆帳：</b>「公立＋安親班 × 3 年」和「私中學費＋校車 × 3 年」哪個多？</span></label></li>
+      <li><label><input type="checkbox" data-k="hours"><span><b>每天在外面的時間：</b>私中加晚自習可能從早上 7 點到晚上 9 點，受得了嗎？</span></label></li>
+      <li><label><input type="checkbox" data-k="alt"><span><b>不讀私中還有別的方法嗎？</b>例如海山的課後輔導，或有接送服務的安親班。</span></label></li>
+      <li><label><input type="checkbox" data-k="strict"><span><b>嚴格管理 OK 嗎？</b>手機要交出去、考試比較多，會覺得安心還是壓力大？</span></label></li>
+      <li><label><input type="checkbox" data-k="target"><span><b>主攻哪一所？</b>南山、裕德、延平可能同一天考，只能選一所。</span></label></li>
+      <li><label><input type="checkbox" data-k="zhulin"><span><b>要不要報竹林卓越營？</b>11/25 中午截止。</span></label></li>
+    </ul>
+    <div class="conclusion">
+      <img src="img/hamster.png" alt="">
+      <div><span class="label">小結論</span><p>最重要的是<b>孩子自己想不想去</b>，大人再幫忙算時間和預算。</p></div>
+    </div>
+  </section>
 
-      <!-- 資料來源 -->
-      <section id="sources" aria-labelledby="h-sources">
+  <!-- 9 資料來源 -->
+  <section class="sec" id="sources" aria-labelledby="h-sources">
+    <div class="sec-head">
+      <img src="img/books.png" alt="">
+      <div>
         <h2 id="h-sources">資料來源</h2>
-        <ul class="sources">
-          <li><a href="https://shirley.tw/115y-enroll-first-high-school/">115 年基北區國中會考錄取建中、北一女人數統計</a></li>
-          <li><a href="https://shirley.tw/114y-enroll-first-high-school/">114 年基北區國中會考錄取建中、北一女與附中人數統計</a></li>
-          <li><a href="https://www.clsh.ntpc.edu.tw/var/file/0/1000/img/11/554521997.pdf">竹林中學 116 多元入學申請簡章（PDF）</a></li>
-          <li><a href="https://www.nssh.ntpc.edu.tw/var/file/0/1000/img/31/713621379.pdf">南山中學國中部書面審查優先入學辦法（PDF）</a></li>
-          <li><a href="https://babyeduhub.com/nanshan-middle-school-evaluation/">南山中學評價與入學資訊</a></li>
-          <li><a href="http://www.yuteh.ntpc.edu.tw/">裕德高中官網</a>、<a href="https://highschool.moreptt.com/info/25965">裕德國中學費</a></li>
-          <li><a href="https://www.yphs.tp.edu.tw/recruit/%E5%9C%8B%E4%B8%AD%E9%83%A8%E6%8B%9B%E7%94%9F/">延平中學國中部招生</a>、<a href="https://ph2.com.tw/blog/yanping-high-school-overview-application/">延平中學學費與入學方式</a></li>
-          <li><a href="https://www.kjsh.ntpc.edu.tw/ischool/publish_page/78/">光仁中學國中部入學資訊</a>、<a href="https://www.kjsh.ntpc.edu.tw/ischool/publish_page/98/">光仁常見問題</a></li>
-          <li><a href="https://blog.ehanlin.com.tw/115-private-junior-high-school-admission">115 學年度私立國中招生懶人包</a></li>
-          <li><a href="https://www.babyhome.com.tw/mommypedia/C0142">公立與私立國中怎麼選（BabyHome）</a></li>
-          <li><a href="https://wmch1969.com/">文城教育學院</a>、<a href="https://www.chenliedu.com/tw/branch/BQ">陳立教育板橋分校</a>、<a href="https://www.km101.com.tw/position/banciao/">高明一對一板橋分校</a>、<a href="https://yk101.pixnet.net/blog/posts/10159101295">永康 VIP 考私中補習班</a></li>
-        </ul>
-      </section>
-    </main>
-  </div>
-</div>
+        <p>資料整理於 2026 年 9 月 13 日，招生資訊請以學校官網為準</p>
+      </div>
+    </div>
+    <ul class="sources">
+      <li><a href="https://shirley.tw/115y-enroll-first-high-school/">115 年基北區國中會考錄取建中、北一女人數統計</a></li>
+      <li><a href="https://shirley.tw/114y-enroll-first-high-school/">114 年基北區國中會考錄取建中、北一女與附中人數統計</a></li>
+      <li><a href="https://www.clsh.ntpc.edu.tw/var/file/0/1000/img/11/554521997.pdf">竹林中學 116 多元入學申請簡章（PDF）</a></li>
+      <li><a href="https://www.nssh.ntpc.edu.tw/var/file/0/1000/img/31/713621379.pdf">南山中學國中部書面審查優先入學辦法（PDF）</a>、<a href="https://babyeduhub.com/nanshan-middle-school-evaluation/">南山中學評價</a></li>
+      <li><a href="http://www.yuteh.ntpc.edu.tw/">裕德高中官網</a>、<a href="https://highschool.moreptt.com/info/25965">裕德國中學費</a></li>
+      <li><a href="https://www.yphs.tp.edu.tw/recruit/%E5%9C%8B%E4%B8%AD%E9%83%A8%E6%8B%9B%E7%94%9F/">延平中學國中部招生</a>、<a href="https://ph2.com.tw/blog/yanping-high-school-overview-application/">延平中學學費與入學方式</a></li>
+      <li><a href="https://www.kjsh.ntpc.edu.tw/ischool/publish_page/78/">光仁中學國中部入學資訊</a>、<a href="https://www.kjsh.ntpc.edu.tw/ischool/publish_page/98/">光仁常見問題</a></li>
+      <li><a href="https://blog.ehanlin.com.tw/115-private-junior-high-school-admission">115 學年度私立國中招生懶人包</a></li>
+      <li><a href="https://wmch1969.com/">文城教育學院</a>、<a href="https://www.chenliedu.com/tw/branch/BQ">陳立教育板橋分校</a>、<a href="https://www.km101.com.tw/position/banciao/">高明一對一板橋分校</a>、<a href="https://yk101.pixnet.net/blog/posts/10159101295">永康 VIP 考私中補習班</a></li>
+    </ul>
+  </section>
+</main>
 
 <footer>
-  <div class="wrap">本頁為家庭討論用的整理筆記，非學校官方資訊。招生日期、費用與名額每年會變動，請以各校最新公告為準。</div>
+  <div class="wrap">
+    <p>本頁是家庭討論用的整理筆記，不是學校官方資訊。</p>
+    <p>可愛圖示來自 <a href="https://github.com/microsoft/fluentui-emoji">Microsoft Fluent Emoji</a>（MIT 授權）。</p>
+  </div>
 </footer>
 
 <script>
-(function(){
-  var el=document.getElementById('countdown');
-  var deadline=new Date('2026-11-25T12:00:00+08:00');
-  var ms=deadline-new Date();
-  if(ms>0){el.textContent='還剩 '+Math.ceil(ms/86400000)+' 天';}
-  else{el.textContent='已截止，請改報 3/7 竹林盃';}
-  var boxes=document.querySelectorAll('#checks input');
-  boxes.forEach(function(b){
-    try{b.checked=localStorage.getItem('talk-'+b.dataset.k)==='1';}catch(e){}
-    b.addEventListener('change',function(){
-      try{localStorage.setItem('talk-'+b.dataset.k,b.checked?'1':'0');}catch(e){}
+// Supabase 訪客計數器設定（anon key 是公開金鑰，資料表由 RLS 保護）
+const SUPABASE_URL = "";
+const SUPABASE_ANON_KEY = "";
+const PAGE_SLUG = "banqiao-junior-high-guide";
+
+(function countdown(){
+  const el = document.getElementById("countdown");
+  const ms = new Date("2026-11-25T12:00:00+08:00") - new Date();
+  el.textContent = ms > 0 ? "還剩 " + Math.ceil(ms / 86400000) + " 天" : "已截止，改報 3/7 竹林盃";
+})();
+
+(function checklist(){
+  document.querySelectorAll("#checks input").forEach(function(box){
+    try { box.checked = localStorage.getItem("talk-" + box.dataset.k) === "1"; } catch (e) {}
+    box.addEventListener("change", function(){
+      try { localStorage.setItem("talk-" + box.dataset.k, box.checked ? "1" : "0"); } catch (e) {}
     });
   });
+})();
+
+(async function visitCounter(){
+  const el = document.getElementById("visits");
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) { el.textContent = "—"; return; }
+  let seen = false;
+  try { seen = sessionStorage.getItem("counted-" + PAGE_SLUG) === "1"; } catch (e) {}
+  const fn = seen ? "get_page_views" : "increment_page_views";
+  try {
+    const res = await fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST",
+      headers: { "apikey": SUPABASE_ANON_KEY, "Authorization": "Bearer " + SUPABASE_ANON_KEY, "Content-Type": "application/json" },
+      body: JSON.stringify({ page_slug: PAGE_SLUG })
+    });
+    if (!res.ok) throw new Error(res.status);
+    const count = await res.json();
+    el.textContent = Number(count).toLocaleString("zh-TW");
+    try { sessionStorage.setItem("counted-" + PAGE_SLUG, "1"); } catch (e) {}
+  } catch (e) {
+    el.textContent = "—";
+  }
 })();
 </script>
 </body>

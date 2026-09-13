@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>升國中大冒險</title>
 <meta name="description" content="從板橋出發，116 學年度（2027 年上國中）要讀公立還是私立？升學數據、三所推薦私中、入學方式、時間表和寒假衝刺班規劃。">
-<link rel="icon" href="img/star.png">
+<link rel="icon" href="img/backpack.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Huninn&display=swap">
@@ -71,7 +71,10 @@ b,strong{font-weight:400;color:var(--pink-deep)}
 .friends img:nth-child(1){animation:bob 3s ease-in-out .4s infinite}
 .friends img:nth-child(3){animation:bob 3s ease-in-out .8s infinite}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-.sparkle{position:absolute;width:34px;opacity:.9}
+.hero h1 .title-icon{display:inline-block;width:.9em;height:auto;margin-left:.12em;vertical-align:-.1em;transform:rotate(10deg);filter:drop-shadow(0 4px 0 rgba(0,0,0,.08))}
+.compass{position:absolute;top:14px;right:5%;width:58px;transform-origin:50% 55%;animation:seek 4s ease-in-out infinite}
+@keyframes seek{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(10deg)}}
+@media (max-width:420px){.compass{width:46px;top:10px;right:4%}}
 
 .deadline{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;background:var(--card);border:3px dashed var(--pink);border-radius:22px;padding:12px 18px}
 .deadline img{width:42px}
@@ -205,13 +208,12 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
 <body>
 
 <header class="hero">
-  <img class="sparkle" src="img/star.png" alt="" style="top:18px;right:34%">
-  <img class="sparkle" src="img/star.png" alt="" style="bottom:26px;left:4%;width:26px">
+  <img class="compass" src="img/compass.png" alt="">
   <div class="wrap">
     <div class="hero-top">
       <div style="display:grid;gap:14px">
         <span class="pill">116 學年度・2027 年 9 月上國中</span>
-        <h1>升國中<span>大冒險！</span></h1>
+        <h1>升國中<span>大冒險！</span><img class="title-icon" src="img/backpack.png" alt=""></h1>
         <p class="sub">讀學區的海山國中，還是去考私中？<br>爸爸、媽媽和孩子一起來看看這份筆記。</p>
       </div>
       <div class="friends" aria-hidden="true">

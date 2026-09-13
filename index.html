@@ -75,6 +75,8 @@ b,strong{font-weight:400;color:var(--pink-deep)}
 .compass{position:absolute;top:14px;right:5%;width:58px;transform-origin:50% 55%;animation:seek 4s ease-in-out infinite}
 @keyframes seek{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(10deg)}}
 @media (max-width:420px){.compass{width:46px;top:10px;right:4%}}
+.sparkle{position:absolute;width:34px;opacity:.9;animation:twinkle 2.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{transform:scale(1) rotate(0)}50%{transform:scale(1.15) rotate(12deg)}}
 
 .deadline{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;background:var(--card);border:3px dashed var(--pink);border-radius:22px;padding:12px 18px}
 .deadline img{width:42px}
@@ -209,6 +211,8 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
 
 <header class="hero">
   <img class="compass" src="img/compass.png" alt="">
+  <img class="sparkle" src="img/star.png" alt="" style="top:18px;right:34%">
+  <img class="sparkle" src="img/star.png" alt="" style="bottom:40px;right:10%;width:28px;animation-delay:1.2s">
   <div class="wrap">
     <div class="hero-top">
       <div style="display:grid;gap:14px">

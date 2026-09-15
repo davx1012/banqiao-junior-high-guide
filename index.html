@@ -65,12 +65,21 @@ b,strong{font-weight:400;color:var(--pink-deep)}
 .hero h1{font-size:clamp(2.4rem,7vw,3.6rem);color:var(--pink-deep)}
 .hero h1 span{color:var(--ink)}
 .hero .sub{font-size:clamp(1.1rem,2.6vw,1.3rem);color:var(--ink);max-width:28em}
-.friends{display:flex;justify-content:center;align-items:flex-end;gap:4px}
-.friends img{width:31%;filter:drop-shadow(0 6px 0 rgba(0,0,0,.06))}
-.friends img:nth-child(2){width:38%;animation:bob 3s ease-in-out infinite}
-.friends img:nth-child(1){animation:bob 3s ease-in-out .4s infinite}
-.friends img:nth-child(3){animation:bob 3s ease-in-out .8s infinite}
+.friends-wrap{display:grid;gap:10px;justify-items:center}
+.bubble{position:relative;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:8px 14px;font-size:.95rem;text-align:center;min-height:3.6em;display:grid;place-items:center;width:100%;max-width:320px}
+.bubble::after{content:"";position:absolute;bottom:-9px;left:var(--tail,50%);width:14px;height:14px;background:var(--card);border-right:2px solid var(--line);border-bottom:2px solid var(--line);transform:translateX(-50%) rotate(45deg);transition:left .25s}
+.bubble.pop{animation:pop .35s ease-out}
+@keyframes pop{0%{transform:scale(.9)}60%{transform:scale(1.04)}100%{transform:scale(1)}}
+.friends{display:flex;justify-content:center;align-items:flex-end;gap:4px;width:100%}
+.pal{appearance:none;border:0;background:none;padding:0;cursor:pointer;width:31%;border-radius:50%;-webkit-tap-highlight-color:transparent}
+.pal img{width:100%;filter:drop-shadow(0 6px 0 rgba(0,0,0,.06));transition:transform .15s}
+.pal:hover img{transform:scale(1.06)}
+.pal:nth-child(2){width:38%;animation:bob 3s ease-in-out infinite}
+.pal:nth-child(1){animation:bob 3s ease-in-out .4s infinite}
+.pal:nth-child(3){animation:bob 3s ease-in-out .8s infinite}
+.pal.jump img{animation:jump .5s ease-out}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes jump{0%{transform:translateY(0) scale(1)}35%{transform:translateY(-26px) scale(1.08) rotate(-6deg)}70%{transform:translateY(0) scale(.96)}100%{transform:translateY(0) scale(1)}}
 .hero h1 .title-icon{display:inline-block;width:1.2em;height:auto;margin-left:.08em;vertical-align:-.22em;transform:rotate(10deg);filter:drop-shadow(0 4px 0 rgba(0,0,0,.08))}
 .compass{position:absolute;top:14px;right:5%;width:58px;transform-origin:50% 55%;animation:seek 4s ease-in-out infinite}
 @keyframes seek{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(10deg)}}
@@ -99,7 +108,11 @@ b,strong{font-weight:400;color:var(--pink-deep)}
 
 /* ---------- nav ---------- */
 nav.chips{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:2px solid var(--line)}
-nav.chips ul{list-style:none;margin:0 auto;padding:10px 18px;max-width:860px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+nav.chips .nav-in{max-width:860px;margin:0 auto;padding:8px 18px;display:flex;align-items:center;gap:10px}
+nav.chips ul{list-style:none;margin:0;padding:2px 0;flex:1;min-width:0;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.prog{flex:none;display:flex;align-items:center;gap:6px;background:var(--sun);color:#5A4300;border-radius:999px;padding:2px 12px 2px 6px;font-size:.92rem;white-space:nowrap}
+.prog img{width:24px}
+.prog.bump{animation:pop .4s ease-out}
 nav.chips a{display:block;white-space:nowrap;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--line);border-radius:999px;padding:2px 14px;font-size:.92rem}
 nav.chips a:hover{border-color:var(--pink);color:var(--pink-deep)}
 
@@ -205,6 +218,47 @@ tr.pub .bar{background:var(--bar-pub)}
 .sources{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.9rem;color:var(--muted)}
 footer{padding:10px 0 50px;color:var(--muted);font-size:.85rem;text-align:center}
 footer .wrap{display:grid;gap:6px;justify-items:center}
+
+/* ---------- 互動：收集星星 ---------- */
+.conclusion{grid-template-columns:54px 1fr auto}
+@media (max-width:560px){.conclusion{grid-template-columns:54px 1fr}.conclusion .collect{grid-column:1/-1;justify-self:end}}
+.collect{appearance:none;font:inherit;font-size:.92rem;cursor:pointer;display:inline-flex;align-items:center;gap:6px;border:2px solid var(--mint-deep);color:var(--mint-deep);background:var(--card);border-radius:999px;padding:4px 14px 4px 8px;white-space:nowrap;transition:transform .15s}
+.collect img{width:22px;filter:grayscale(1);opacity:.55;transition:filter .2s,opacity .2s}
+.collect:hover{transform:translateY(-2px)}
+.collect[aria-pressed="true"]{background:var(--sun);border-color:var(--sun);color:#5A4300}
+.collect[aria-pressed="true"] img{filter:none;opacity:1}
+.collect.pop img{animation:spin .6s ease-out}
+@keyframes spin{0%{transform:scale(.6) rotate(0)}60%{transform:scale(1.5) rotate(200deg)}100%{transform:scale(1) rotate(360deg)}}
+.checks input.pop{animation:pop .35s ease-out}
+
+/* ---------- 互動：小測驗 ---------- */
+.quiz{display:grid;gap:16px}
+.quiz-bar{display:flex;gap:6px;justify-content:center}
+.quiz-bar i{width:34px;height:8px;border-radius:999px;background:var(--line)}
+.quiz-bar i.on{background:var(--pink)}
+.quiz-q{font-size:1.3rem;text-align:center}
+.quiz-opts{display:grid;gap:10px}
+@media (min-width:600px){.quiz-opts{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}}
+.opt{appearance:none;font:inherit;cursor:pointer;text-align:left;background:var(--bg);color:var(--ink);border:3px solid var(--line);border-radius:20px;padding:14px 16px;display:flex;gap:10px;align-items:center;transition:transform .15s,border-color .15s}
+.opt:hover{border-color:var(--pink);transform:translateY(-2px)}
+.opt .emo{font-size:1.6rem;line-height:1}
+.quiz-result{display:grid;gap:12px;justify-items:center;text-align:center;background:var(--pink-soft);border-radius:26px;padding:22px 18px}
+.quiz-result img{width:110px;animation:jump .6s ease-out}
+.quiz-result h3{font-size:1.6rem;color:var(--pink-deep)}
+.quiz-result p{max-width:30em}
+.again{appearance:none;font:inherit;cursor:pointer;background:var(--sky);color:#fff;border:0;border-radius:999px;padding:6px 22px}
+.again:hover{filter:brightness(1.05)}
+
+/* ---------- 互動：完成慶祝 ---------- */
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50;width:100%;height:100%}
+.party{position:fixed;inset:0;z-index:40;display:grid;place-items:center;padding:20px;background:rgba(40,25,45,.45)}
+.party[hidden],#confetti[hidden]{display:none}
+.party-card{background:var(--card);border-radius:30px;padding:28px 24px;max-width:380px;width:100%;text-align:center;display:grid;gap:12px;justify-items:center;box-shadow:0 10px 0 rgba(0,0,0,.12);animation:pop .45s ease-out}
+.party-card .trio{display:flex;align-items:flex-end;gap:4px}
+.party-card .trio img{width:70px;animation:jump .7s ease-out}
+.party-card .trio img:nth-child(2){width:86px;animation-delay:.1s}
+.party-card .trio img:nth-child(3){animation-delay:.2s}
+.party-card h2{font-size:1.8rem;color:var(--pink-deep)}
 </style>
 </head>
 <body>
@@ -220,10 +274,13 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
         <h1>升國中<span>大冒險！</span><img class="title-icon" src="img/backpack.png" alt=""></h1>
         <p class="sub">讀學區的海山國中，還是去考私中？<br>爸爸、媽媽和孩子一起來看看這份筆記。</p>
       </div>
-      <div class="friends" aria-hidden="true">
-        <img src="img/rabbit.png" alt="">
-        <img src="img/hamster.png" alt="">
-        <img src="img/cat.png" alt="">
+      <div class="friends-wrap">
+        <p class="bubble" id="bubble" aria-live="polite">點點我們，我們會說話喔！</p>
+        <div class="friends">
+          <button class="pal" type="button" data-pal="rabbit" aria-label="跟兔兔說話"><img src="img/rabbit.png" alt=""></button>
+          <button class="pal" type="button" data-pal="hamster" aria-label="跟倉鼠說話"><img src="img/hamster.png" alt=""></button>
+          <button class="pal" type="button" data-pal="cat" aria-label="跟貓咪說話"><img src="img/cat.png" alt=""></button>
+        </div>
       </div>
     </div>
 
@@ -257,8 +314,11 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
 </header>
 
 <nav class="chips" aria-label="章節">
+  <div class="nav-in">
+  <div class="prog" id="prog" title="冒險星星"><img src="img/star.png" alt=""><span><span class="num" id="prog-n">0</span>/<span class="num" id="prog-total">9</span></span></div>
   <ul>
     <li><a href="#compare">公立 vs 私立</a></li>
+    <li><a href="#quiz">小測驗</a></li>
     <li><a href="#data">升學數據</a></li>
     <li><a href="#picks">三所推薦</a></li>
     <li><a href="#admission">要考試嗎</a></li>
@@ -268,6 +328,7 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
     <li><a href="#talk">全家討論</a></li>
     <li><a href="#sources">資料來源</a></li>
   </ul>
+  </div>
 </nav>
 
 <main class="wrap">
@@ -313,6 +374,25 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
       <img src="img/hamster.png" alt="">
       <div><span class="label">小結論</span><p>私中能省掉放學走去安親班的麻煩，但要付學費，作息也比較緊。</p></div>
     </div>
+  </section>
+
+  <!-- 小測驗 -->
+  <section class="sec" id="quiz" aria-labelledby="h-quiz">
+    <div class="sec-head">
+      <img src="img/bulb.png" alt="">
+      <div>
+        <h2 id="h-quiz">我是哪一種國中冒險家？</h2>
+        <p>5 個小問題，選最像你的答案</p>
+      </div>
+    </div>
+    <div class="quiz" id="quiz-box" aria-live="polite">
+      <div class="quiz-result" style="background:var(--sky-soft)">
+        <img src="img/cat.png" alt="" style="animation:none">
+        <p>回答完 5 題，兔兔、倉鼠、貓咪會告訴你，你比較像哪一種冒險家！</p>
+        <button class="again" type="button" id="quiz-start">開始測驗</button>
+      </div>
+    </div>
+    <p class="note">測驗只是好玩，幫忙想想自己的喜好。真正要讀哪一間，還是要全家一起討論喔！</p>
   </section>
 
   <!-- 2 升學數據 -->
@@ -593,8 +673,19 @@ footer .wrap{display:grid;gap:6px;justify-items:center}
   <div class="wrap">
     <p>本頁是家庭討論用的整理筆記，不是學校官方資訊。</p>
     <p>可愛圖示來自 <a href="https://github.com/microsoft/fluentui-emoji">Microsoft Fluent Emoji</a>（MIT 授權）。</p>
+    <button class="again" type="button" id="reset-stars" style="background:var(--bar-pub)">重新開始冒險（清除星星）</button>
   </div>
 </footer>
+
+<div class="party" id="party" hidden role="dialog" aria-modal="true" aria-labelledby="party-title">
+  <div class="party-card">
+    <div class="trio"><img src="img/rabbit.png" alt=""><img src="img/hamster.png" alt=""><img src="img/cat.png" alt=""></div>
+    <h2 id="party-title">冒險完成！</h2>
+    <p>你收集到全部 <span class="num" id="party-n">9</span> 顆星星，是升國中小勇士！<br>接下來，跟爸爸媽媽一起決定下一步吧～</p>
+    <button class="again" type="button" id="party-close">耶！太棒了</button>
+  </div>
+</div>
+<canvas id="confetti" hidden></canvas>
 
 <script>
 // Supabase 訪客計數器設定（publishable key 是公開金鑰，資料表由 RLS 保護，只能透過 RPC 讀取與 +1）
@@ -608,12 +699,258 @@ const PAGE_SLUG = "banqiao-junior-high-guide";
   el.textContent = ms > 0 ? "還剩 " + Math.ceil(ms / 86400000) + " 天" : "已截止，改報 3/7 竹林盃";
 })();
 
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+function store(key, value){
+  try {
+    if (value === undefined) return localStorage.getItem(key);
+    if (value === null) localStorage.removeItem(key); else localStorage.setItem(key, value);
+  } catch (e) {}
+  return null;
+}
+function replayClass(el, cls){
+  el.classList.remove(cls);
+  void el.offsetWidth;
+  el.classList.add(cls);
+}
+
 (function checklist(){
   document.querySelectorAll("#checks input").forEach(function(box){
-    try { box.checked = localStorage.getItem("talk-" + box.dataset.k) === "1"; } catch (e) {}
+    box.checked = store("talk-" + box.dataset.k) === "1";
     box.addEventListener("change", function(){
-      try { localStorage.setItem("talk-" + box.dataset.k, box.checked ? "1" : "0"); } catch (e) {}
+      store("talk-" + box.dataset.k, box.checked ? "1" : "0");
+      if (box.checked) replayClass(box, "pop");
     });
+  });
+})();
+
+// 點小動物會跳起來說話
+(function talkingPals(){
+  const bubble = document.getElementById("bubble");
+  const lines = {
+    rabbit: [
+      "我是兔兔！11/25 中午前，記得報名竹林卓越營喔！",
+      "考私中不是只看成績，營隊當天的表現也很重要～",
+      "南山、裕德、延平可能同一天考試，只能選一所喔！"
+    ],
+    hamster: [
+      "我是倉鼠！每一段最後的「小結論」都是我整理的～",
+      "看懂一段就按「收集星星」，集滿 9 顆有驚喜！",
+      "寒假衝刺班去之前，先試聽比較看看喔！"
+    ],
+    cat: [
+      "喵～去做下面的小測驗，看看你是哪一種冒險家！",
+      "不管去哪一間學校，你自己喜歡最重要，喵！",
+      "累了要休息一下，冒險才能走得遠～喵"
+    ]
+  };
+  const turn = { rabbit: 0, hamster: 0, cat: 0 };
+  const tail = { rabbit: "18%", hamster: "50%", cat: "82%" };
+  document.querySelectorAll(".pal").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      const who = btn.dataset.pal;
+      bubble.textContent = lines[who][turn[who] % lines[who].length];
+      turn[who]++;
+      bubble.style.setProperty("--tail", tail[who]);
+      replayClass(bubble, "pop");
+      replayClass(btn, "jump");
+    });
+  });
+})();
+
+// 冒險星星：每段小結論 1 顆＋小測驗 1 顆
+const stars = (function(){
+  const conclusions = Array.from(document.querySelectorAll(".sec .conclusion"));
+  const ids = conclusions.map(function(c){ return c.closest("section").id; }).concat(["quiz"]);
+  const total = ids.length;
+  const progN = document.getElementById("prog-n");
+  const prog = document.getElementById("prog");
+  document.getElementById("prog-total").textContent = total;
+  document.getElementById("party-n").textContent = total;
+
+  function has(id){ return store("star-" + id) === "1"; }
+  function count(){ return ids.filter(has).length; }
+  function render(){ progN.textContent = count(); }
+
+  function give(id){
+    if (has(id)) return;
+    store("star-" + id, "1");
+    render();
+    replayClass(prog, "bump");
+    if (count() === total) setTimeout(celebrate, 450);
+  }
+
+  conclusions.forEach(function(c){
+    const id = c.closest("section").id;
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "collect";
+    btn.innerHTML = '<img src="img/star.png" alt=""><span></span>';
+    const label = btn.querySelector("span");
+    function paint(){
+      const on = has(id);
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      label.textContent = on ? "拿到星星了！" : "我看懂了，收集星星";
+    }
+    paint();
+    btn.addEventListener("click", function(){
+      if (has(id)) return;
+      give(id);
+      paint();
+      replayClass(btn, "pop");
+      confetti(24, btn);
+    });
+    c.appendChild(btn);
+  });
+
+  document.getElementById("reset-stars").addEventListener("click", function(){
+    ids.forEach(function(id){ store("star-" + id, null); });
+    document.querySelectorAll(".collect").forEach(function(b){
+      b.setAttribute("aria-pressed", "false");
+      b.querySelector("span").textContent = "我看懂了，收集星星";
+    });
+    render();
+  });
+
+  render();
+  return { give: give };
+})();
+
+// 灑彩色紙花
+const confetti = (function(){
+  const canvas = document.getElementById("confetti");
+  const ctx = canvas.getContext("2d");
+  const colors = ["#FF8FB8", "#6CBDF0", "#FFD45C", "#8EDDB8", "#C9A7F5"];
+  let bits = [];
+  let running = false;
+
+  function frame(){
+    const dpr = window.devicePixelRatio || 1;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, innerWidth, innerHeight);
+    bits = bits.filter(function(b){ return b.y < innerHeight + 40; });
+    bits.forEach(function(b){
+      b.vy += .28; b.x += b.vx; b.y += b.vy; b.r += b.vr;
+      ctx.save(); ctx.translate(b.x, b.y); ctx.rotate(b.r); ctx.fillStyle = b.c;
+      if (b.round){ ctx.beginPath(); ctx.arc(0, 0, b.s / 2, 0, 6.28); ctx.fill(); }
+      else ctx.fillRect(-b.s / 2, -b.s / 4, b.s, b.s / 2);
+      ctx.restore();
+    });
+    if (bits.length) requestAnimationFrame(frame);
+    else { running = false; canvas.hidden = true; }
+  }
+
+  return function(amount, fromEl){
+    if (reduceMotion) return;
+    const dpr = window.devicePixelRatio || 1;
+    let x0 = innerWidth / 2, y0 = innerHeight / 3;
+    if (fromEl){ const r = fromEl.getBoundingClientRect(); x0 = r.left + r.width / 2; y0 = r.top; }
+    for (let i = 0; i < amount; i++){
+      bits.push({
+        x: x0, y: y0,
+        vx: (Math.random() - .5) * (fromEl ? 7 : 14),
+        vy: -Math.random() * (fromEl ? 7 : 12) - 3,
+        s: 5 + Math.random() * 6,
+        r: Math.random() * 6.28,
+        vr: (Math.random() - .5) * .3,
+        c: colors[Math.floor(Math.random() * colors.length)],
+        round: Math.random() < .4
+      });
+    }
+    if (!running){
+      running = true;
+      canvas.hidden = false;
+      canvas.width = innerWidth * dpr;
+      canvas.height = innerHeight * dpr;
+      requestAnimationFrame(frame);
+    }
+  };
+})();
+
+function celebrate(){
+  const party = document.getElementById("party");
+  party.hidden = false;
+  document.getElementById("party-close").focus();
+  confetti(160);
+}
+document.getElementById("party-close").addEventListener("click", function(){
+  document.getElementById("party").hidden = true;
+});
+document.getElementById("party").addEventListener("click", function(e){
+  if (e.target === e.currentTarget) e.currentTarget.hidden = true;
+});
+document.addEventListener("keydown", function(e){
+  if (e.key === "Escape") document.getElementById("party").hidden = true;
+});
+
+// 小測驗：我是哪一種國中冒險家？
+(function quiz(){
+  const box = document.getElementById("quiz-box");
+  // 分數：正數偏私中、負數偏公立
+  const questions = [
+    { q: "放學後，你比較想要？", opts: [
+      { emo: "📚", t: "留在學校跟同學一起晚自習", v: 2 },
+      { emo: "🏠", t: "回家或去安親班，有自己的時間", v: -2 }
+    ]},
+    { q: "遇到考試很多的時候，你會？", opts: [
+      { emo: "🔥", t: "覺得很刺激，想拿高分", v: 2 },
+      { emo: "😖", t: "有點緊張，希望慢慢來", v: -2 },
+      { emo: "😌", t: "還好耶，都可以", v: 0 }
+    ]},
+    { q: "上課時手機要交給老師保管，你覺得？", opts: [
+      { emo: "👌", t: "沒關係，放學再拿回來就好", v: 1 },
+      { emo: "🙈", t: "有點不想交出去", v: -1 }
+    ]},
+    { q: "你最想要的國中生活是？", opts: [
+      { emo: "🏆", t: "跟程度差不多的同學一起拚", v: 2 },
+      { emo: "🎨", t: "參加很多社團和活動", v: -1 },
+      { emo: "🤝", t: "跟國小的好朋友讀同一間", v: -2 }
+    ]},
+    { q: "每天早上 7 點就要出門搭校車，你可以嗎？", opts: [
+      { emo: "⏰", t: "可以！我起得來", v: 1 },
+      { emo: "😴", t: "太早了啦……", v: -1 }
+    ]}
+  ];
+  const results = {
+    rabbit: { img: "img/rabbit.png", title: "衝刺挑戰型冒險家", text: "你喜歡挑戰、也不怕考試！私中的晚自習和同學一起拚的環境，可能很適合你。可以跟爸爸媽媽聊聊南山、裕德、延平哪一間最吸引你。" },
+    hamster: { img: "img/hamster.png", title: "平衡探險型冒險家", text: "你兩邊都能適應！可以先去參加私中的體驗營和說明會，實際看看校園和上課感覺，再決定要不要考私中。" },
+    cat: { img: "img/cat.png", title: "自在探索型冒險家", text: "你喜歡有自己的時間，也想參加很多活動！學區的海山國中社團多、步調有彈性，可能很適合你。可以跟家人討論放學後怎麼安排。" }
+  };
+  let step = 0, score = 0;
+
+  function bar(){
+    return '<div class="quiz-bar" aria-hidden="true">' + questions.map(function(_, i){ return '<i class="' + (i <= step ? "on" : "") + '"></i>'; }).join("") + "</div>";
+  }
+  function showQuestion(){
+    const item = questions[step];
+    box.innerHTML = bar() +
+      '<p class="quiz-q">第 ' + (step + 1) + ' 題：' + item.q + "</p>" +
+      '<div class="quiz-opts">' + item.opts.map(function(o, i){
+        return '<button class="opt" type="button" data-i="' + i + '"><span class="emo">' + o.emo + "</span><span>" + o.t + "</span></button>";
+      }).join("") + "</div>";
+    box.querySelectorAll(".opt").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        score += item.opts[Number(btn.dataset.i)].v;
+        step++;
+        if (step < questions.length) showQuestion(); else showResult();
+      });
+    });
+    const first = box.querySelector(".opt");
+    if (first && box.dataset.started) first.focus({ preventScroll: true });
+    box.dataset.started = "1";
+  }
+  function showResult(){
+    const key = score >= 3 ? "rabbit" : score <= -3 ? "cat" : "hamster";
+    const r = results[key];
+    store("quiz-result", key);
+    box.innerHTML = '<div class="quiz-result"><img src="' + r.img + '" alt=""><p>你是……</p><h3>' + r.title + "</h3><p>" + r.text + '</p><button class="again" type="button" id="quiz-again">再玩一次</button></div>';
+    box.querySelector("#quiz-again").addEventListener("click", function(){ step = 0; score = 0; showQuestion(); });
+    stars.give("quiz");
+    confetti(50, box.querySelector(".quiz-result img"));
+  }
+
+  document.getElementById("quiz-start").addEventListener("click", function(){
+    box.dataset.started = "1";
+    showQuestion();
   });
 })();
 
